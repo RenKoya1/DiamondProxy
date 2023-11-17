@@ -122,7 +122,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
     }
 
     /**
-to
+     * @dev See {IERC721-getApproved}.
      */
     function getApproved(uint256 tokenId) public view virtual override returns (address) {
         _requireMinted(tokenId);
@@ -463,6 +463,4 @@ to
     function __unsafe_increaseBalance(address account, uint256 amount) internal {
         _balances[account] += amount;
     }
-
-    
 }

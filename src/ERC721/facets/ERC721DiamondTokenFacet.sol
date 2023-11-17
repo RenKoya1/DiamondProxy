@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.13;
 
 import "openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol";
 import "openzeppelin-contracts/contracts/utils/Context.sol";
@@ -32,6 +32,10 @@ contract ERC721DiamondTokenFacet is Context {
     /// @notice returns the symbol of the token.
     function symbol() external pure returns (string memory) {
         return "NFTV1";
+    }
+
+    function totalSupply() external view returns (uint256){
+        return _tokenStorage.tokenId;
     }
 
     /// @notice returns the balance of an address.
